@@ -1,0 +1,249 @@
+
+html{
+	margin:0; padding:0;
+}
+
+body  {
+	/*min-width: 780px; /* max-width: 780px; width: 780px; */
+	/*min-height: 200px; */
+	margin: 0; padding: 0;
+	background-color: rgb(244,244,244);
+	font: 12px "Segoe UI", Tahoma, serif;
+}
+	.tabs {
+		column-count: 4;
+		column-gap: 0;
+		column-rule-width: 0; 
+		height: 100%;
+		xborder: 1px solid red;
+	}
+		.tab-wrapper {
+			display: inline-block;
+			position: relative;
+			overflow: visible;
+			margin: 2px; padding: 0; border: 0;
+			min-width: 190px; max-width: 190px; min-height: 28px; max-height: 28px;
+			cursor: pointer;
+		}
+		
+		@keyframes loading  {
+			0%   { content: "\1f551"; }
+			20%    { content: "\1f553"; }
+			40%    { content: "\1f555"; }
+			60%    { content: "\1f557"; }
+			80%    { content: "\1f559"; }
+			100%    { content: "\1f55b"; }
+		}
+		.tab-wrapper.loading:after {
+			animation: loading 1s infinite;
+			content: "";
+			position: absolute; left: 4px; top: 1px;
+			font: 18px serif; color: #565656;
+			text-shadow: 0px 0px 2px rgb(255,255,255);
+			vz-index: 999999;
+		}
+		
+
+		.drop-placeholder  { 
+			height: 28px; 
+			margin: 0; padding: 0; border: 0;
+			box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+			background: rgba(255,255,150,0.2);
+			border-radius: 13px 25px 5px 5px / 13px 100% 5px 5px;
+		}
+
+				.tab-wrapper:hover  .tab, 
+				.tab-wrapper.with-menu .tab{
+					/*margin-top: 0; xmargin-left: 0;*/
+					box-shadow: 3px 3px 3px rgba(0,0,0,0.25);
+					background: rgb(244,244,244);	
+					transition: background 0.3s;
+					
+				}
+					.tab {	
+						position: relative;						
+						height: 20px; width: 186px; min-width: 186px; max-width: 186px;
+						margin-top: 2px; margin-left: 2px;
+						background: rgb(222,222,222);
+						border: 1px solid gray; border-radius: 13px 25px 5px 5px / 13px 100% 5px 5px; 
+						box-shadow: 2px 2px 2px rgba(0,0,0,0.15);
+						overflow:hidden;
+						transition: background 0.5s;
+					}
+					.tab.active {
+						background: rgb(255, 255, 200);
+					}
+					
+						.icon {
+							height: 20px; width: 20px;
+							float: left;
+							margin: 0; margin-right: 2px; padding: 0;
+						}
+						
+						.page-title {
+							float: left;
+							height: 20px; width: 150px;
+							/*text-shadow: 1px 1px 1px rgba(0,0,0,0.3);*/
+							overflow: hidden;
+						}
+				.tab-wrapper:hover  .close,
+				.tab-wrapper:hover  .select-button {
+					display: block;
+					width: 16px; height:16px;
+					
+	
+				}
+					.select-button,
+					.close {
+						border-radius: 30%;
+						position: absolute; display: none; overflow:visible;
+						width: 13px; height: 13px; max-width: 13px; max-height: 13px;
+						margin: 0; padding:0; 
+						opacity:0.9;
+						
+						
+					}					
+					.select-button {
+						right: 0px; top: 0px;
+					}
+
+					.close {
+						width: 10px; height: 10px; max-width: 10px; max-height: 10px;
+						right: 18px; top: 0px; 
+					}
+						.select-button:hover {
+							border: 1px solid #565656; 
+							background: rgb(50,200,50); box-shadow: inset 2px 2px 4px rgba(255,255,200,1);
+							transition: background 0.5s;
+						}
+						.close:hover {
+							border: 1px solid #565656; 
+							background: red; box-shadow: inset 2px 2px 4px rgba(255,255,200,1);
+							transition: background 0.5s;
+							
+						}
+							.select-button  .plus, 
+							.close .x {
+								margin: 0; padding: 0;
+								position: absolute;
+								bottom:0px; right: -2px;
+								font-size:12px; font-weight:bold; color: #565656;	
+								text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+							}
+							.close .x {
+								right:-1px;
+							}
+							.close:hover .x {
+								bottom: -2px; right: 2px;
+							}
+							.select-button:hover  .plus {
+								bottom: -1px; right:1px;
+							}
+							
+							.select-button .plus {
+								font-size:16px;
+								bottom:1px;
+							}
+							
+							.ui-selected .select-button  {
+								box-shadow: inset 2px 2px 4px rgba(255,255,200,0.7);
+								border: 1px solid #565656; 
+								display: block;
+								background: rgb(0,200,0);	
+								opacity:0.9;
+								
+							}
+							
+							.ui-selected .select-button  .plus{
+								
+								bottom: -1px; right:1px; color:#363636;
+							}
+				
+				@keyframes aud  {
+					50%   { opacity: 0.5; }
+					100%    { opacity: 1; }
+				}
+				
+				
+				.tab-wrapper.audible .tab:before,
+				.tab-wrapper.audible.muted span:after {
+					animation: aud 1s infinite;
+				}
+
+				.tab-wrapper.audible .tab:before,
+				.tab-wrapper.muted .tab:before {
+					content: "\1F50A";
+					position: absolute;
+					right: 0px; top: 4px; 
+					font: 15px serif; color: #565656; text-shadow: 0 0 3px white;	
+				}
+				
+				.tab-wrapper.muted span:after  {
+					content: "x";
+					position: absolute;
+					right: 0px; top: 2px;
+					font-size: 16px; color: #565656; text-shadow: 0 0 3px white; 
+				}
+					
+				
+				.pinned .tab:after  {
+					content: "\1F4CC";
+					position: absolute;
+					font: 14px serif; color: #565656; text-shadow: 0 0 3px white;
+					left: 0; top: -2px;
+				}
+
+		#menu  {
+			display: none; position: absolute;
+			column-count: 2;
+			cursor: pointer;
+			padding: 6px; border: 1px solid gray;
+			background: rgb(233,233,233);
+			border-radius: 5%; box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
+			font: 11px "Segoe UI", Tahoma, serif; color: black;
+			opacity:0.85;
+		}	
+		
+		
+			#menu li  {
+				margin: 2px;
+				padding: 2px;
+				display: block;
+				cursor: pointer;
+			}
+			
+			#menu li:hover {
+				background: white;
+				box-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+				transition:background 0.3s, box-shadow 0.3s;
+			}
+				
+				#menu .title {
+					min-height: 30px;
+					font: 12px; 
+					margin-bottom: 6px; border-bottom: 1px solid silver;
+					cursor: default;
+				}
+				#menu .title:hover {
+					background: initial;
+					box-shadow: initial;
+				}
+				
+					#menu mark {
+						font: 16px;
+						background: rgba(0,0,0,0);
+					}
+					
+					#menu .x {
+						position: absolute;
+						display: block;
+						height: 10px; width: 20px; right: 3px;	top: 0;
+						border: 0; border-radius: 10px; text-align: center;
+						cursor: pointer;
+					}
+					
+					#menu .x:hover {
+						right: 2px; top: -2px;
+						text-shadow: 2px 2px 2px grey;	
+					}
+				

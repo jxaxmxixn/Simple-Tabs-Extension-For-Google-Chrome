@@ -11,13 +11,7 @@
 *
 **/
 
-//setTimeout(function(){ //FOR PROFILING... Speed id fine, could be faster but i'm not complaining... yet...
-
-		chrome.extension.onRequest.addListener(function(request) {                    
-			if (request.questions) {                                                                  
-				alert('yesss!')                                                   ;
-			}
-		});
+//setTimeout(function(){ //FOR PROFILING... Speed is fine, could be faster but i'm not complaining... yet...
 
 
 $.noConflict();

@@ -15,8 +15,10 @@ You can quickly rearange, duplicate, close, reload, pin, and mute, one or more t
 
 *Enjoy!*
 
+ -Jamin
 
-This is one of my many "for fun" projects I do when I can't seem to focus on what I should be doing, so that I can get my brain into the zone to focus on what I should be doing.
+
+*This is one of my many "for fun" projects I do when I can't seem to focus on what I should be doing, so that I can get my brain in the zone to focus on what I should be doing.*
 
 
 

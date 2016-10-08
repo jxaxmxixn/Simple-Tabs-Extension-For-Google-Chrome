@@ -2,7 +2,7 @@
 
 **This Google Chrome Extension was created for people who like to open a million tabs and "mysteriously" have a hard time making sense of them all.**
 
-With the click of the Simple Tabs icon, or using a hotkey (like Ctrl+S) your tabs quickly appear in a fully readable and usable format.
+With the click of the Simple Tabs icon, or using a hotkey (like Alt+S) your tabs quickly appear in a fully readable and usable format.
 
 You can quickly rearange, duplicate, close, reload, pin, and mute, one or more tabs at the same time - or simply double click to go to that tab.
 

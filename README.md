@@ -1,4 +1,4 @@
-# Simple-Tabs-Extension-For-Google-Chrome
+# Simple Tabs Extension For Google Chrome
 
 **This Google Chrome Extension was created for people who like to open a million tabs and "mysteriously" have a hard time making sense of them all.**
 
